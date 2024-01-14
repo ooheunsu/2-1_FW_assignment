@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>렌트카 대여</title>
+</head>
+<body>
+    <h1> Welcome to Joyful Rental Car</h1>
+    <form action="rent.php" method="get">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="uname">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="text" name="phone">
+                </td>
+            </tr>
+            <tr>
+                <td>Pick-up Date</td>
+                <td>
+                    <input type="date" name="pdate">
+                </td>
+            </tr>
+            <tr>
+                <td>Return Date</td>
+                <td>
+                    <input type="date" name="rdate">
+                </td>
+            </tr>
+            <tr>
+                <td>Cars</td>
+                <td>
+                    <fieldset>
+                        <!-- 같은 그룹으로 동작하는 라디오들(애들끼리)는 같은 네임을 써야함 -->
+                        <!-- 라디오는 디폴트값으로 하나 선택되어있는게 좋음 : 방법 checked -->
+                    <input type="radio" name="car" value="c0" checked>기아 K3(21500/1day)<br>
+                    <input type="radio" name="car" value="c1">기아 K5(28500/1day)<br>
+                    <input type="radio" name="car" value="c2">기아 K8(35600/1day)<br>
+                    <input type="radio" name="car" value="c3">현대 쏘나타(29700/1day)<br>
+                    <input type="radio" name="car" value="c4">현대 투싼(30500/1day)<br>
+                    <input type="radio" name="car" value="c5">현대 그랜저(33400/1day)<br>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>Accessories</td>
+                <td>
+                    <fieldset>
+                        <!-- 체크박스와 라디오의 차이점 : 라디오는 여러값 중 하나만, 체크박스는 여러개 선택가능 = 값을 여러개 전달 = 배열로 전달
+                        배열로 전달하기 위해서는 반드시 name에 배열기호[]를 써줘야함 -->
+                    <input type="checkbox" name="acc[]" value="a0">블랙박스(1100/1day)<br>
+                    <input type="checkbox" name="acc[]" value="a1">운전자보험(4500/1day)<br>
+                    <input type="checkbox" name="acc[]" value="a2">유모차(1700/1day)<br>
+                    <input type="checkbox" name="acc[]" value="a3">캠핑용품(7200/1day)<br>
+                    <input type="checkbox" name="acc[]" value="a4">골프우산(2000/렌트기간)<br>
+                    <input type="checkbox" name="acc[]" value="a5">아이스박스(8000/렌트기간)<br>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="대여신청"> <!-- 써밋은 php로 전달 -->
+        <input type="reset" value="대여취소"> <!-- 리셋은 입력내용 리셋이지머 -->
+
+    </form>
+</body>
+</html>

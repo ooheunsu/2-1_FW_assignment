@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Flexbox Layout</title>
+    <meta charset="utf-8">
+    <style>
+        .content {
+            width: 900px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .content>h1 {
+            font-size: 300%;
+            padding: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container>img {
+            width: 200px;
+            height: 400px;
+            margin: 10px;
+            /*flex: 1;  /* grow : 1, shrink : 1, basis : 0 */
+            flex: none;
+        }
+
+        .container>img:hover {
+            /*                transform: rotate(2deg);*/
+            transform: scale(1.2);
+            ;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>My Photos with Flex Layout</h1>
+        <div class="container">
+            <img src="images/image1.jpg">
+            <img src="images/image2.jpg">
+            <img src="images/image3.jpg">
+            <img src="images/image4.jpg">
+            <img src="images/image5.jpg">
+            <img src="images/image6.jpg">
+            <img src="images/image7.jpg">
+            <img src="images/image8.jpg">
+        </div>
+    </div>
+</body>
+
+</html>

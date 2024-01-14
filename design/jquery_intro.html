@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <style>
+            div{
+                border: 1px solid;
+                background-color:red;
+                margin: 2px 0 2px 0;
+            }
+			#myDiv {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+        </style>
+    </head>
+
+    <body>
+        <h1>Demo: jQuery DOM methods </h1>
+        <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+        <button id="btn1">Show Text</button>
+        <button id="btn2">Show HTML</button>
+        <div id="div1">div 1 </div>
+        <div id="div2">div 2</div>
+        <p class="hello">Hello</p>
+        <div>This is div.<label>This is label.</label> </div>
+        <div><p class="para">This is a paragraph.</p> </div>
+        <p class="para">This is another paragraph.</p>
+        <!-- DOM Traverse -->
+        <button id="btn3">Highlight all nested lists</button>
+        <ul>
+        <li>Apples
+            <ul>
+            <li>Big ones</li>
+            <li>Juicy ones</li>
+            <li>Red ones</li>
+            </ul>
+        </li>
+        <li>Oranges</li>
+        <li>Papaya
+            <ul>
+            <li>Papaya carica</li>
+            <li>Carica</li>
+            <li>Carica pubescens</li>
+            </ul>
+        </li>
+        <li>Lychee</li>
+        <li>Rambutan</li>
+        <li>Passionfruit</li>
+        <li>Mango</li>
+        </ul>
+        <!-- Animation -->
+		<button id="anim">Animation</button>
+        <div id="myDiv" class="redDiv"></div>
+        <div id="msgDiv"></div>
+        <!-- AJAX -->
+        <div id="div_ajax"><h2>Let jQuery AJAX Change This Text</h2></div>
+        <button id="ajax_btn">Get External Content</button>
+        <script>
+            // jQuery 구문 시작
+            // $(function() {}) 으로 줄여써도 똑같음~
+            $(document).ready(function() { // 브라우저에 웹페이지 해석과 로딩을 끝냈을 때
+                // Animate() 함수
+                // $('#anim').click(()=>{} 구조로써됨 , arrow함수
+                $('#anim').click(function() {
+                    $('#myDiv').animate({
+                       width: '300px',
+                       height: '300px'
+                    }, 3000, 'swing', function() {
+                        alert('Animation is completed');
+                    });
+                });
+                // DOM 처리
+                $('#btn1').click(()=>{
+//                    $('#test').text("jQuery는 자바스크립트 라이브러리다."); // .text하고 안에 내용써준건 text()가 그 안에 내용을 바꿔줌 #test내용을 괄호안에 내용으로
+//                    const text = $('#test').text();
+                $('#test').html("<ul><li>Apple</li><li>Lemon</li></ul>");
+//                $('#test').html("jQuery는 자바스크립트 라이브러리다.");
+                const text = $('#test').html();    
+                alert(text);
+                });
+                
+                // after나 before같은건 엘리먼트 추가
+                $('#div1').after("<div style='background-color: yellow'> New Div</div>");
+                $('#div1').before("<div style='background-color: orange'> New Div</div>");
+                $('.hello').append(" World!!") // append는 텍스트 내용 추가
+                
+                $('#ajax_btn').click(()=> {
+                    $('#div_ajax').load('jquery_ajax.html'); // jquery_ajax.html 파일을 웹서버에 요청하고 응답으로 오는 파일의 내용을 div_ajax 엘리먼트에 표시하기
+                    // 이건 .load()나 .ajax()를 이용해서 할 수 있음
+                })
+            });
+		</script>
+	</body>
+</html>

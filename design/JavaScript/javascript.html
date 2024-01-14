@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1 id="title" onmouseover="document.getElementById('title').innerHTML='자바스크립트 배우기'">JavaScript Study</h1> 
+    <p id="out"></p>
+    <form id="myform">
+        반지름 : <input type="text" name="radius">
+        
+    </form>
+    <button onclick="circle()">면적계산</button> <!-- onclick = 클릭했을 때, circle()함수 출력 -->
+    <script>
+        // 주석이고요
+        /* 주석임다 */
+        // 참고로 Java랑 JS랑은 완전 별개 언어임. JS원래 이름은 'ECMAScript'
+        // 변수 선언은 var, let, const(상수정의)가 있음
+//        var a = Math.floor(Math.random() * 10);
+//        var b = 5;
+//        document.getElementById('out').innerHTML = a * b;
+//        innerHTML가 엘류먼트사이에 내용이 들어갈 부분을 뜻함
+//        let c = 7;
+//        const d = 9; // 뒤에가서 d를 또 다른값으로 정의하려하는게 안됨, 값 못바꿈
+        // 중요한건데 ! var와 let의 차이점 !
+        // 변수 = scope(영역 = 변수가 사용이 될 수 있느냐, 없느냐?)
+        
+        // var = global, function (global로 선언한거는 블록 안,밖 상관없이 어디서든 쓸 수 있음)
+        // var은 재정의 가능(유연성이 뛰어난 기능이지만 오류 발생 원인이 될 수 있음)
+        
+        // let = a타입; 으로 선언한 것을 뒤에서 let = b타입과 같이 다른 타입으로 재정의 불가능
+        function circle() {
+            let r = document.forms['myform']['radius'].value;
+            const PI = 3.141516;
+            let size = r ** 2 ** PI;
+            const out = document.getElementById('out');
+            out.innerHTML = "원의 면적 = " + size;
+        }
+    </script>
+</body>
+</html>

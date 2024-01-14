@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>CSS Selector</title>
+    <meta charset="utf-8">
+<!-- 구글웹폰트 html에 적용법
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+-->
+    <style>
+/*        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap'); 구글웹폰트 css에 적용법, 동글이만*/
+        
+        @import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&display=swap'); /*큐트랑 동글이둘다, 장바구니에 두개담아서 가져왔더니 얘가 알아서 두개를 조합해줬네*/
+        body {
+            font-family: 'Dongle', sans-serif; /* 산세리프=고딕체계열 */
+        }
+        h1 {
+            font-family: 'Cute Font', cursive; /* 커시브=필기체계열 */
+        }
+        /* 복합 선택자 */
+        img+p {
+            font-style: italic;
+        }
+
+        p~span {
+            color: red;
+        }
+
+        /* 속성 */
+        a[href="http://example.com"] {
+            border-bottom: 1px dotted red;
+        }
+
+        a[href*="example"] {
+            /*example이라는 단어가 다른말들과 붙어서 있어도 가능*/
+            color: darkcyan;
+        }
+
+        a[href~="example"] {
+            /*example이라는 단어로 딱 떨어지게 있어야함*/
+            color: darkorange;
+        }
+
+        a[href^="#"] {
+            /**/
+            color: red;
+        }
+
+        a[href$=".com"] {
+            /**/
+            color: blueviolet;
+        }
+
+        input[type="text"] {
+            /*텍스트를 입렵받는 인풋상자에 배경색 넣어주기*/
+            background-color: bisque;
+        }
+
+        /* 가상 클래스 선택자 */
+        a:hover {
+            background-color: aquamarine;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        a:active {
+            color: darkblue;
+        }
+
+        input:focus {
+            background-color: violet;
+        }
+
+        p:first-of-type {
+            /* 어떤 영역안에서 첫 번째 p */
+            border-bottom: 2px dashed darkblue;
+        }
+
+        li:first-child {
+            background: yellow;
+        }
+
+        li:last-child {
+            background: green;
+        }
+
+        li:nth-child(2) {
+            /*2n, even은 짝수번쨰, 2n+1, odd은 홀수번째, 3n과 같이 그냥 뭐의 배수도 가능 그냥 숫자넣기로 지정도 가능*/
+            background: skyblue;
+        }
+
+        table,
+        th,
+        td {
+            /*콤마로 나열 */
+            border: 1px solid black;
+            border-collapse: collapse;
+            /*이중선을 하나로*/
+        }
+
+        table {
+            width: 50%;
+            margin: 0 auto;
+            /*테이블이 항상 가운데에 위치함*/
+            height: 300px;
+        }
+
+        td {
+            text-align: center;
+            /*가로기준 중앙*/
+            vertical-align: middle;
+            /*세로기준 중앙*/
+        }
+
+        tr:nth-child(even) {
+            background: skyblue;
+        }
+
+        /* 가상요소 선택자 */
+        h1::first-letter {
+            font-size: 1.5em;
+
+        }
+
+        p::first-line {
+            border-bottom: 2px dotted red;
+        }
+
+        p>a::after {
+            content: "!!!!";
+            background-color: orange;
+            border-color: black;
+            border-style: dotted;
+        }
+
+        span[data-descr] {
+            /*span엘류먼트중에 data-descr속성을 갖고있는, 데이터descr속성은 고유속성이 아니라 걍 사용자가 이름을 붙여준거*/
+            position: relative;
+            text-decoration: underline;
+            color: #00f;
+            cursor: pointer;
+        }
+
+        span[data-descr]:hover::after {
+            content: attr(data-descr);
+            /*속성값을 읽어내주는 함수느김, data-descr안에 내용을 콘텐츠에 넣겠따*/
+            position: absolute;
+            left: 0;
+            top: 24px;
+            min-width: 200px;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            background-color: #ffffcc;
+            padding: 12px;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>CSS combinators(조합선택자)</h1>
+    <div>
+        <img src="">
+        <p>Empty Image<br>Image2</p>
+        <span>This is not red.</span>
+        <p>Here is a paragraph.</p>
+        <code>Here is some code.</code>
+        <pre></pre>
+        <span>And here is a red span!</span>
+        <code>More code...</code>
+        <span>And this is a red span!</span>
+    </div>
+    <h1>CSS attribute selector(속성선택자)</h1>
+    <ul>
+        <li><a href="#internal">Internal link</a></li>
+        <li><a href="http://example.com">Example link</a></li>
+        <li><a href="#InSensitive">Insensitive internal link</a></li>
+        <li><a href="http://example.org example">Example org link</a></li>
+    </ul>
+    <div lang="en-us en-gb en-au en-nz">Hello World!</div>
+    <div lang="pt">Olá Mundo!</div>
+    <div lang="zh-CN">世界您好！</div>
+    <div lang="zh-TW">世界您好！</div>
+    <div data-lang="zh-TW">?世界您好！</div>
+    <ul>
+        <li class="number">One</li>
+        <li class="number">Two!</li>
+        <li class="number">Three</li>
+        <li class="number">Four</li>
+    </ul>
+    <h1>CSS pseudo-classes(가상클래스)</h1>
+    <p>가상 클래스는 요소의 특정 상태에 따라 스타일을 정의할 때 사용된다. 특정 상태란 예를 들어 다음과 같다.</p>
+    <p>Mouse over and click the link: <a href="https://www.google.com">Google.com</a></p>
+    <p>이 예제는
+        <span tabindex="0" data-descr="단어와 문장 부호의 집합">텍스트</span>와 함께 약간의
+        <span tabindex="0" data-descr="호버 시 보여지는 작은 팝업">툴팁</span>을 포함합니다.
+    </p>
+    <input type="text" placeholder="Your name...">
+    <hr>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+        </tr>
+        <tr>
+            <td>Jessy</td>
+            <td>White</td>
+            <td>$270</td>
+        </tr>
+        <tr>
+            <td>Harry</td>
+            <td>Hunt</td>
+            <td>$330</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<style>
+
+    #song {
+
+        position: relative;
+        width: 95%;
+        left: -2%;
+    }
+    
+ </style>
+    
+<div class="book-content">
+    
+<?php
+session_start();
+$login = false;
+
+if (!isset($_SESSION['dw_uid'])) {
+    echo "<script>alert('로그인을 하지 않았습니다.')</script>";
+    echo "<script>location.href='project.php'</script>";
+} else 
+include_once('../../../../dbconn2.php');
+
+// 연결 확인
+$conn = new mysqli($server, $user, $passwd, $dbname);
+if ($conn->connect_error) {
+    die("데이터베이스 연결 실패: " . $conn->connect_error);
+}
+
+// 테이블 데이터 검색
+$sql = "select * from slam_dunk where id = 1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // 데이터가 있을 경우 행별로 반복하여 출력
+    while ($row = $result->fetch_assoc()) {
+        // 각 행의 데이터를 가져와서 페이지에 출력하거나 원하는 방식으로 활용
+        $id = $row['id'];
+        $name = $row['name'];
+        $price = $row['price'];
+        $discounted_price = $row['discounted_price'];
+        $photo = $row['photo'];
+        $details = $row['details'];
+
+        // CSS 클래스를 동적으로 추가하는 조건 확인
+        $priceClass = '';
+        if (!is_null($discounted_price)) {
+            $priceClass = 'discounted-price';
+        }
+
+        // 페이지에 데이터를 출력하는 예시
+        echo "<div>";
+        echo "<img id = 'song' src='../../../img/slam/$photo' alt='slam product'>";
+        echo "</div>";
+        echo "<h1 class='name'>No.$id $name</h1>";
+        echo "<div class='priceline'>";
+        echo "<h3 class='$priceClass'>$price 원</h3><h3>&nbsp;➜ $discounted_price 원</h3>";
+        echo "<form id='cart-form' action='/프로젝트/프로젝트/addcartproc-m.php' method='post'>";
+        echo "<input type='hidden' name='product' value='$name'>";
+        echo "<input type='hidden' name='price' value='$price'>";
+        if (!is_null($discounted_price)) {
+            echo "<input type='hidden' name='discounted_price' value='$discounted_price'>";
+        }
+        echo "<input class='button' type='submit' value='장바구니에 담기'>";
+        echo "</form>";
+        echo "</div>";
+        echo "<p>상품설명 - $details</p>";
+    }
+} else {
+    echo "데이터가 없습니다.";
+}
+
+// 연결 종료
+$conn->close();
+?>
+
+</div>

@@ -1,0 +1,25 @@
+USE `pizzamall`;
+
+/*Table structure for table `mypizza` */
+
+DROP TABLE IF EXISTS `mypizza`;
+
+CREATE TABLE `mypizza` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `large` int(11) NOT NULL,
+  `small` int(11) NOT NULL,
+  `photo` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `mypizza` */
+
+insert  into `mypizza`(`id`,`name`,`large`,`small`,`photo`) values 
+(1,'치즈 케이크롤',33900,28000,'pizza1.jpg'),
+(2,'치즈 앤 그릴드 비프',33900,28000,'pizza2.jpg'),
+(3,'슈퍼시드 앤 스테이크롤',33900,28000,'pizza3.jpg'),
+(4,'더블크러스트 치즈멜팅롤',33900,28000,'pizza4.jpg'),
+(5,'와규 앤 비스테카',33900,28000,'pizza5.jpg'),
+(6,'킹 프론 씨푸드',33900,28000,'pizza6.jpg'),
+(7,'직화스테이크',33900,28000,'pizza7.jpg');

@@ -1,0 +1,80 @@
+<style>
+    
+    @font-face {
+            font-family: 'PyeongChangPeace-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+    
+  body {
+    background-image: url(tear-pics/3e0c4b2c6bcfe7fb.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .picBox img {
+    display: block;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .picBox img:hover {
+    cursor: pointer;
+  }
+  
+  .message {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 4%;
+    font-family: 'PyeongChangPeace-Bold';
+    color: midnightblue;
+  }
+</style>
+<!-- HTML -->
+<div class="back">
+  <div class="picBox">
+    <img class="pic_click" src="https://i.imgur.com/4Eyyidb.png" />
+      <div class = "message"> 주문서를 클릭하세요 !</div>
+  </div>
+</div>
+<script>
+  let pic = document.querySelector(".pic_click");
+  let imageLinks = [
+    "https://i.imgur.com/4Eyyidb.png",
+    "https://i.imgur.com/j1eKdX3.png",
+    "https://i.imgur.com/upzNvX0.png",
+    "https://i.imgur.com/0pmky1M.png",
+    "https://i.imgur.com/nIntC3i.png",
+    "https://i.imgur.com/flW8k1D.png",
+    "https://i.imgur.com/O3pZMAJ.png",
+    "https://i.imgur.com/K3qgx4c.png",
+    "https://i.imgur.com/9GmUaol.png",
+    "https://i.imgur.com/kurfnub.png",
+    "https://i.imgur.com/AVq4OTF.png",
+    "https://i.imgur.com/tsF1Dv9.png"
+  ];
+  let currentIndex = 0;
+  let message = document.querySelector(".message");
+
+  document.querySelector(".pic_click").addEventListener('click', function() {
+    if (currentIndex === imageLinks.length - 1) {
+      message.innerHTML = "⋆ Ꮺ ָ࣪ ۰ 주문이 완료되었습니다! ⋆ Ꮺ ָ࣪ ۰";
+
+      setTimeout(function() {
+        window.location.href = "showorder-m.php";
+      }, 3000);
+
+    } else {
+      currentIndex = (currentIndex + 1) % imageLinks.length; // 다음 이미지로 이동
+    }
+
+    pic.setAttribute("src", imageLinks[currentIndex]);
+  });
+</script>
+

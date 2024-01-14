@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box; /* 테두리를 포함한 사이즈 */
+            }
+            .header {
+                text-align: center;
+                padding: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header" id="myHeader">
+          <h1>The best nature photos</h1>
+          <p>Nature wallpapers for your desktop and tablet</p>
+        </div>
+        <div class="row"> 
+          <div class="column">
+            <img src="photo1.jpg" style="width:100%">
+            <img src="photo2.jpg" style="width:100%">
+            <img src="photo3.jpg" style="width:100%">
+            <img src="photo4.jpg" style="width:100%">
+            <img src="photo5.jpg" style="width:100%">
+            <img src="photo6.jpg" style="width:100%">
+            <img src="photo7.jpg" style="width:100%">
+            <img src="photo8.jpg" style="width:100%">  
+          </div>
+          <div class="column">
+            <img src="photo5.jpg" style="width:100%">
+            <img src="photo2.jpg" style="width:100%">
+            <img src="photo1.jpg" style="width:100%">
+            <img src="photo4.jpg" style="width:100%">
+            <img src="photo7.jpg" style="width:100%">
+            <img src="photo3.jpg" style="width:100%">
+            <img src="photo8.jpg" style="width:100%">  
+            <img src="photo6.jpg" style="width:100%">
+          </div>
+        </div>
+    </body>
+</html>
+

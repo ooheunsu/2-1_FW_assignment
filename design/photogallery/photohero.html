@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+             body { /*이 안에 두개가 화면을 가득 채우게 만들어줌*/
+                height: 100vh; /* vh : viewport height , 가로는 vw인데 가로는 어차피 디폴트로 꽉차서 지정해줄 필요XX */
+                margin: 0;
+            }
+            .photo {
+                background-image: url(photographer.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                position: relative; /*포토안에 텍스트가 포토안에서 움직인다?*/
+                height: 70% /*포토한테 높이를 안잡아주면 포토가 안나타남! */
+            }
+            .title {
+                /*                엘리먼트를 영역 내에서 가운데 위치시키는 구문들*/
+                position: absolute; /* 원래 흐름에서 떼어낸 다음 절대좌표로 이동 */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+            }
+            .title button{
+                border: none;
+                padding: 10px 25px; /* top/bottom left/right*/
+                background-color: #ddd; /* #dddddd 줄여서 표시 */
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .title button:hover {/*호버는 위에 마우스를 올렸을 때*/
+                background-color: orangered;
+                color: white;
+            }
+            .text {
+                width: 70%;
+                margin: 60px auto;
+                text-align: center;
+                font-size: 1.5em;
+                line-height: 1.3em;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="photo">
+			<div class="title">
+				<h1>My Photo Gallery</h1>
+				<p>I'm a Photographer</p>
+				<button>Enter</button>
+			</div>
+		</div>
+		<p class="text">A good photography website is a showcase for photos. Take inspiration from real-world photo galleries— your website should be uncluttered and have plenty of whitespace to frame your photos.</p>
+	</body>
+</html>

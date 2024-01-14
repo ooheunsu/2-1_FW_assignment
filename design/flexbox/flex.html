@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Flexbox Layout</title>
+    <meta charset="utf-8">
+    <style>
+        .container {
+            height: 500px;
+            border: 2px dashed blue;
+            justify-content: space-evenly;
+            align-items: baseline;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container>div {
+            /* > 기호는 바로 밑에 있는 child 요소를 가리킴*/
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 60px;
+            height: 60px;
+        }
+
+        .item4 {
+            flex-grow: 1;
+        }
+
+        .item5 {
+            flex-grow: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">1</div>
+        <div class="item2" style="height: 100px">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item7">7</div>
+        <div class="item8">8</div>
+        <div class="item9">9</div>
+    </div>
+</body>
+
+</html>

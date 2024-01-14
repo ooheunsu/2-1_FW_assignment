@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Grid Layout</title>
+        <meta charset="utf-8">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #e43; /* # ee3344 을 줄여쓴것*/
+                padding: 2em;
+                    
+            }
+            .gallery { /* grid container */
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: 100px 200px;
+                grid-gap: 10px; /* gap: 10px; 라고 써도됨 똑같음*/
+                grid-auto-flow: dense; /* 여백을 꽉 매꿔줌 */
+            }
+            .gallery li { /* grid item */
+                list-style-type: none;
+                padding: 5px;
+                background-color: white;
+                border-radius: 5px;
+            }
+            .gallery li:nth-child(2),
+            .gallery li:nth-child(4),
+            .gallery li:nth-child(6) {
+                grid-column: span 2; /* 현재 위치에서 컬럼 2칸을 차지 */
+                grid-row: span 2; /* 현재 위치에서 행 2칸을(줄을) 차지 */
+            }
+            
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="gallery">
+          <li>
+            <img src="https://source.unsplash.com/random?iran" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?greece" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?dance" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?usa" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?spain" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?italy" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?france" alt="">  
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?china" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?japan" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?uk" alt="">  
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?england" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?cuba" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?amazon" alt="">  
+          </li>  
+          <li>
+            <img src="https://source.unsplash.com/random?germany" alt="">
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/random?canada" alt="">  
+          </li>  
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+오후 3:37:48  [main] 	Initializing Control Panel
+오후 3:37:48  [main] 	Windows Version:  Home  64-bit
+오후 3:37:48  [main] 	XAMPP Version: 8.2.0
+오후 3:37:48  [main] 	Control Panel Version: 3.3.0  [ Compiled: Apr 6th 2021 ]
+오후 3:37:48  [main] 	Running with Administrator rights - good!
+오후 3:37:48  [main] 	XAMPP Installation Directory: "c:\xampp\"
+오후 3:37:48  [main] 	Checking for prerequisites
+오후 3:37:49  [main] 	All prerequisites found
+오후 3:37:49  [main] 	Initializing Modules
+오후 3:37:49  [main] 	Starting Check-Timer
+오후 3:37:49  [main] 	Control Panel Ready
+오후 3:38:15  [Apache] 	Attempting to start Apache app...
+오후 3:38:15  [Apache] 	Status change detected: running
+오전 2:20:25  [main] 	Deinitializing Modules
+오전 2:20:25  [main] 	Deinitializing Control Panel
+

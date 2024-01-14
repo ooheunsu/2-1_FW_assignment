@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BestCup Cafe</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                height: 100vh; /* vh : viewport height , 가로는 vw인데 가로는 어차피 디폴트로 꽉차서 지정해줄 필요XX */
+                background-image: url(coffee1.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                
+            }
+            .slogan {
+                background-color: rgba(0,0,0,0.5);
+/*                엘리먼트를 영역 내에서 가운데 위치시키는 구문들*/
+                position: absolute; /* 원래 흐름에서 떼어낸 다음 절대좌표로 이동 */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                text-align: center;
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .slogan > h1 {
+                font-style: italic;
+                font-family: "Book Antique", cursive;
+                margin-bottom: 0;
+            }
+            h3 {
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                padding: 10px 0 10px 0; /* top right bottom left*/
+            }
+            p {
+                color: crimson;
+                font-size: 130%; /* p의 부모인 div의 기본 글자크기(16px)의 130px*/
+            }
+            .slogan > button {
+                border: none;
+                padding: 10px 25px; /* top/bottom left/right*/
+                background-color: #ddd; /* #dddddd 줄여서 표시 */
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .slogan > button:hover { /*호버는 위에 마우스를 올렸을 때*/
+                background-color: orangered;
+                color: white;
+            }
+            ul {
+                list-style-type: none; /*리스트앞에 점 없애기*/
+                background-color: rgb(0,0,0);
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                float: left; /* 리스트가 아래로 주루룩인걸 가로로 주루룩하게 만드는, 플로트가 원래 위치에서 떨어트림 */
+            }
+            li > a {
+                text-decoration: none;
+                display: block; /*   line 엘리먼트를 block 엘리먼트로 표시*/
+                padding: 14px 16px;
+                color: white;
+                text-align: center;
+            }
+            li > a:hover {
+                background-color: forestgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        <div class="slogan">
+        <h1>World Best Coffee</h1>
+        <h3>the BestCup Coffee</h3>
+        <button>Our Coffee</button>
+        <p>Open 10am to 11pm, Mon - Sat</p>
+        </div>
+    </body>
+</html>
+
+
+
+

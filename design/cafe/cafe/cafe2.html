@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BestCup Cafe</title>
+        <meta charset="utf-8">
+        <style>
+            .slogan {
+                background-color: rgba(0, 0, 0, 0.5);
+/*                엘리먼트를 영역 내에서 가운데 위치시키는 구문들*/
+                position: absolute; /* 원래 흐름에서 떼어낸 다음 절대좌표로 이동 */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                text-align: center;
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .slogan > h1 {
+                font-style: italic;
+                font-family: "Book Antique", cursive;
+                margin-bottom: 0;
+            }
+            h3 {
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                padding: 10px 0 10px 0; /* top right bottom left*/
+            }
+            p {
+                color: crimson;
+                font-size: 130%; /* p의 부모인 div의 기본 글자크기(16px)의 130px*/
+            }
+            .slogan > button {
+                border: none;
+                padding: 10px 25px; /* top/bottom left/right*/
+                background-color: #ddd; /* #dddddd 줄여서 표시 */
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .slogan > button:hover { /*호버는 위에 마우스를 올렸을 때*/
+                background-color: orangered;
+                color: white;
+            }
+            #video {
+                position: fixed;    /* 원래 위치에서 분리해서 브라우저 창에 고정 */
+                right: 0;           /* 브라우저 창의 오른쪽에 붙여라~ */
+                bottom: 0;          /* 브라우저 창의 아래쪽에 붙여라 ㅋ */
+                min-width: 100%;    /* 가로 100% */
+                min-height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <video id="video" autoplay muted loop>
+            <source src="coffeeshop.mp4" type="video/mp4">
+        </video>
+        <div  class="slogan">
+        <h1>World Best Coffee</h1>
+        <h3>the BestCup Coffee</h3>
+        <button>Our Coffee</button>
+        <p>Open 10am to 11pm, Mon - Sat</p>
+        </div>
+    </body>
+</html>
+
+
+
+

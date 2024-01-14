@@ -1,0 +1,41 @@
+<!doctype html>
+   <html>
+    <head>
+        <title>JSON Data</title>
+        <meta charset="uft-8">
+    </head>
+    <body>
+        <h1>JSON Data 이해하기</h1>
+        <section class="contact"></section>
+    
+    <script>
+        // 자바스크립트 객체
+        const contacts = {
+            name: "Tom",
+            age : 21,
+            adress: {
+                street: "반포대로 14길",
+                city: "서울"
+            },
+            hobby: ["요리", "바이킹", "캠핑"]  // 마지막 요소에는 , 를 생각
+        }
+        document.querySelector('.contact').innerHTML = contacts.hobby[0]; // 맨뒤에 점찍고 보고싶은 데이터 키 넣으면 출력됨 like .name / .hobby[0]
+        const text = JSON.stringify(contacts);  // stringify는 자바스크립트 객체를 JSON 표현법의 문자열로 생성해 줌
+        document.querySelector('.contact').innerHTML = text;
+        
+        // parse는 JSON 텍스트를 자바스크립트 객체로 변환시켜줌
+        const contacts2 = JSON.parse(text);
+        document.querySelector('.contact').innerHTML = contacts2.hobby;
+        
+        // ajax 기법으로 외부의 서버에서 처리 결과를 JSON 데이터 받아온 다음 처리하기
+        const request = new XMLHttpRequest();   // 줄여서.. XHR 객체
+        request.open("GET", 'jsondata.json', true); // 서버한테 jsondata.json 파일을 요청
+        request.send(); // 서버에 요청을 보냄
+        request.onload = function() {   // 서버에서 응답을 받았을 때 처리하는 함수
+            // this.response 에는 jsondata.json 파일의 내용이 들어있음. 문자열
+            const data = JSON.parse(this.response); // 객체로 변환
+            // 객체를 활용해서 웹페이지에 표시하기
+        }
+        </script>
+    </body>
+</html>

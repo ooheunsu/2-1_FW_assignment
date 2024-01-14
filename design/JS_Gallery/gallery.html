@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with JavaScript</title>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+    <!-- nanogallery2 -->
+    <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+
+    <!-- ### position of the gallery ### -->
+    <div id="nanogallery2"></div>
+       
+    <script>
+    $(document).ready(function() {
+       $('#nanogallery2').nanogallery2({
+           thumbnailHeight: 300,
+           thumbnailwidth: 300,
+           thumbnailDisplayTransition: 'slideDown2',
+           thumbnailDisplayTransitionDuration: 1000,
+           thumbnailHoverEffect2: 'scale120|borderLighter',
+           
+           items: [
+               {src: "image1.jpg", title: "album A", ID: 1, kind: "album"},
+               {src: "image1.jpg", srct: "image1.jpg", title: "IMAGE 1", ID: 10, albumID: 1},// src가 원본이미지, srct가 섬네일이 될 이미지
+               {src: "image2.jpg", srct: "image2.jpg", title: "IMAGE 1", ID: 11, albumID: 1},
+               {src: "image3.jpg", srct: "image3.jpg", title: "IMAGE 1", ID: 12, albumID: 1},
+               {src: "https://youtu.be/xym-gmq_rlw", title: "Youtube", ID: 13, albumID: 1},
+               
+               // album B
+               {src: "image4.jpg", title: "album B", ID: 2, kind: "album"},
+               {src: "image4.jpg", srct: "image4.jpg", title: "IMAGE 1", ID: 20, albumID: 2},
+               {src: "image5.jpg", srct: "image5.jpg", title: "IMAGE 1", ID: 21, albumID: 2},
+               {src: "image6.jpg", srct: "image6.jpg", title: "IMAGE 1", ID: 22, albumID: 2},
+               {src: "image7.jpg", srct: "image7.jpg", title: "IMAGE 1", ID: 23, albumID: 2},
+               {src: "image8.jpg", srct: "image8.jpg", title: "IMAGE 1", ID: 24, albumID: 2},
+               {src: "image9.jpg", srct: "image9.jpg", title: "IMAGE 1", ID: 25, albumID: 2},
+               {src: "image10.jpg", srct: "image10.jpg", title: "IMAGE 1", ID: 26, albumID: 2}
+           ]
+       }); 
+    });
+    </script>     
+</body>
+</html>

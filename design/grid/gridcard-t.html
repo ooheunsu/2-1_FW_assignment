@@ -1,0 +1,86 @@
+<!doctype html>
+<title>Example</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid > article {
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    article img {
+        width: 100%; /* 이미지 크기를 부모인 article의 가로 영역에 맞춘 것*/
+/*        높이크기는 주지않고 가로크기만 준다*/
+    }
+    .text {
+        padding: 0 20px 20px; /* top bottom left/right */
+    }
+    .text > button {
+        background-color: gray;
+        border: 0;
+        color: white;
+        padding: 10px; /* 왜 여기서도 가로 100%을 했는데 꽉채워서 보여지지 않는가? -> padding값을 줘서 왼오에 10px씩 패딩 여백이 들어갔기 때문*/
+        width: 100%;
+    }
+    .part {
+        color: darkorange;
+    }
+
+</style>
+<main class="grid">
+    <article class="card1">
+        <img src="https://source.unsplash.com/random?iran" alt="Sample photo">
+        <div class="text">
+            <h3>Seamlessly visualize quality</h3>
+            <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+            <button><span class="part">Here's</span> why</button>
+        </div>
+    </article>
+    <article class="card2">
+        <img src="https://source.unsplash.com/random?greece" alt="Sample photo">
+        <div class="text">
+            <h3><span class="part">Completely</span> Synergize</h3>
+            <p><span class="part">Dramatically engage seamlessly visualize</span> quality intellectual capital without superior collaboration and idea-sharing.</p>
+            <button>Here's how</button>
+        </div>
+    </article>
+    <article class="card3">
+        <img src="https://source.unsplash.com/random?usa" alt="Sample photo">
+        <div class="text">
+            <h3>Dynamically Procrastinate</h3>
+            <p>Completely synergize resource taxing relationships via premier niche markets.</p>
+            <button>Read more</button>
+        </div>
+    </article>
+    <article class="card4">
+        <img src="https://source.unsplash.com/random?spain" alt="Sample photo">
+        <div class="text">
+            <h3>Best in class</h3>
+            <p>Imagine jumping into that boat, and just letting it sail wherever the wind takes you...</p>
+            <button>Just do it...</button>
+        </div>
+    </article>
+    <article class="card5">
+        <img src="https://source.unsplash.com/random?italy" alt="Sample photo">
+        <div class="text">
+            <h3>Dynamically innovate supply chains</h3>
+            <p>Holisticly predominate extensible testing procedures for reliable supply chains.</p>
+            <button>Here's why</button>
+        </div>
+    </article>
+    <article class="card6">
+        <img src="https://source.unsplash.com/random?france" alt="Sample photo">
+        <div class="text">
+            <h3>Sanity check</h3>
+            <p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
+            <button>Stop here</button>
+        </div>
+    </article>
+</main>

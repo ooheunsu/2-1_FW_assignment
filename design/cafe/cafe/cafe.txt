@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BestCup Cafe</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>World Best Coffee</h1>
+        <h3>the BestCup Coffee</h3>
+        <button>Our Coffee</button>
+        <p>Open 10am to 11pm, Mon - Sat</p>
+    </body>
+</html>
+
+
+
+

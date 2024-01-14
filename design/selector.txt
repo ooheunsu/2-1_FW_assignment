@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS Selector</title>
+        <meta charset="utf-8">
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>CSS combinators(조합선택자)</h1>
+        <div>
+            <img src="">
+            <p>Empty Image<br>Image2</p>
+            <span>This is not red.</span>
+            <p>Here is a paragraph.</p>
+            <code>Here is some code.</code>
+            <pre></pre>
+            <span>And here is a red span!</span>
+            <code>More code...</code>
+            <span>And this is a red span!</span>            
+        </div>
+        <h1>CSS attribute selector(속성선택자)</h1>
+        <ul>
+          <li><a href="#internal">Internal link</a></li>
+          <li><a href="http://example.com">Example link</a></li>
+          <li><a href="#InSensitive">Insensitive internal link</a></li>
+          <li><a href="http://example.org">Example org link</a></li>
+        </ul>
+        <div lang="en-us en-gb en-au en-nz">Hello World!</div>
+        <div lang="pt">Olá Mundo!</div>
+        <div lang="zh-CN">世界您好！</div>
+        <div lang="zh-TW">世界您好！</div>
+        <div data-lang="zh-TW">?世界您好！</div>
+        <ul>
+          <li class="number">One</li>
+          <li class="number">Two!</li>
+          <li class="number">Three</li>
+          <li class="number">Four</li>
+        </ul>
+        <h1>CSS pseudo-classes(가상클래스)</h1>
+        <p>가상 클래스는 요소의 특정 상태에 따라 스타일을 정의할 때 사용된다. 특정 상태란 예를 들어 다음과 같다.</p>
+        <p>Mouse over and click the link: <a href="https://www.google.com">Google.com</a></p>
+        <p>이 예제는
+            <span tabindex="0" data-descr="단어와 문장 부호의 집합">텍스트</span>와 함께 약간의
+            <span tabindex="0" data-descr="호버 시 보여지는 작은 팝업">툴팁</span>을 포함합니다.
+        </p>
+        <input type="text" placeholder="Your name...">
+        <hr>
+        <table>
+          <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Points</th>
+          </tr>
+          <tr>
+              <td>Peter</td>
+              <td>Griffin</td>
+              <td>$100</td>
+          </tr>
+          <tr>
+              <td>Lois</td>
+              <td>Griffin</td>
+              <td>$150</td>
+          </tr>
+          <tr>
+              <td>Joe</td>
+              <td>Swanson</td>
+              <td>$300</td>
+          </tr>
+          <tr>
+              <td>Cleveland</td>
+              <td>Brown</td>
+              <td>$250</td>
+          </tr>
+          <tr>
+              <td>Jessy</td>
+              <td>White</td>
+              <td>$270</td>
+          </tr>
+          <tr>
+              <td>Harry</td>
+              <td>Hunt</td>
+              <td>$330</td>
+          </tr>
+        </table>
+    </body>
+</html>

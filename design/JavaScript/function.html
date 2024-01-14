@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <meta charset="uft-8">
+</head>
+
+<body>
+    <h1>JavaScript Function</h1>
+    <p>
+        <img src="images/animal1.jpg" style="width: 300px" id="picture">
+    </p>
+    
+<!-- 꼭 function을 써야하는 건 아님 쓸 문장이 아래와 같이 간단경우나 동작하려는게 단순한 경우에는 그냥 함수 안만들고 바로안에 넣어서 써도됨 ㅋ   <button onclick="document.getElementById('picture').style.display = 'block'">Show</button>-->
+    <button onclick="showImg()">Show</button>
+    <button onclick="hideImg()">Hide</button>
+    <button onclick="changeImg('animal1.jpg')">Picture A</button>
+    <button onclick="changeImg('animal2.jpg')">Picture B</button>
+    
+    <script>
+        /*뭘 가리킨다, 머 가져다 쓴다 -> document.getElementById('갖다쓸거')*/
+        function showImg() {
+            document.getElementById('picture').style.display = "block"
+            
+        }
+
+        function hideImg() {
+            document.getElementById('picture').style.display = "none"
+
+        }
+        
+        function changeImg(image){
+            document.getElementById('picture').src = "images/" + image;
+        }
+        
+        
+
+    </script>
+</body>
+
+</html>

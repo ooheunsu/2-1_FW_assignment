@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    	
+    <title>FLEX 영상 소개</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+<!--    위에 있는 스크립트부터 해석하면서 내려오면 html부분이 실행이 안될수도있어 = 그래서 스크립트 부분은 head에 넣어도 되고 맨 아래에 넣어도 돼~ -->
+<!--defer란 뭔가?-->
+</head>
+<body>    
+    <main>
+        <header>
+            <h1>
+                <span>DCODELAB</span>                
+            </h1>
+
+            <address>
+                2021 DCODELAB<br>ALL RIGHT RESERVED.
+            </address>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>01</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div> 
+                    <figure>
+                        <video src="vids/vid1.mp4" muted loop></video>
+                    </figure>
+                </div>
+            </article>
+
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>02</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div> 
+                    <figure>
+                        <video src="vids/vid2.mp4" muted loop></video>
+                    </figure>
+                </div>
+            </article>
+
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>03</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div> 
+                    <figure>
+                        <video src="vids/vid3.mp4" muted loop></video>
+                    </figure>
+                </div>
+            </article> 
+            
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>04</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div> 
+                    <figure>
+                        <video src="vids/vid4.mp4" muted loop></video>
+                    </figure>
+                </div>
+            </article>  
+        </section>  
+        
+        <aside>
+            <div class="txt">
+                <h1>01</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <span class="close">CLOSE</span>  
+<!--                span이 위에 하나 더 있어서 여기 span에는 클래스명을 하나 부여-->
+            </div>
+            <figure>
+                <video src="vids/vid1.mp4" loop muted ></video>
+            </figure>
+        </aside>
+    </main>
+</body>
+</html>

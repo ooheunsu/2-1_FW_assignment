@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+    <h1>Javascript Data Structure</h1>
+    <p id="output"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <script>
+    // Array
+    const list = [4, 13, 9, 21, 33];
+        let text = ""; 
+//        function (value, index) 방법1
+//        (value, index) =>        방법2
+        list.forEach((value, index) =>
+            text += index + " : " + (value ** 2) + "<br>"
+        );
+        document.getElementById('output').innerHTML = text;
+        
+        // Set (중복허용X)
+        const mySet = new Set([4, 13, 9, 21, 33]); // Array --> Set object
+        mySet.add(3);
+//        mySet.add(9); // 중복 허용 X
+        text = "";
+        mySet.forEach((value, index) => text += index + " : " + (value ** 2) + "<br>");
+        document.getElementById('output2').innerHTML = text;
+        
+        // Map
+        const myMap = new Map([["one", 4], [ "two", 13], ["three", 9]]);
+        myMap.set("four", 21);  // map에 원소추가
+        text = "";
+        myMap.forEach((value, index) => text += index + " : " + (value ** 2) + "<br>");
+        document.getElementById('output3').innerHTML = text;
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+        #clock {
+            font-size: 175px;
+            width: 900px;
+            margin: 200px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+        }    
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        setInterval(showtime, 1000);    // 1초마다 반복적으로 showtime() 함수 호출
+        function showtime() {
+            const time = new Date();    // 컴퓨터에서 현재 날짜와 시간을 가져옴(시, 분, 초)
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            let ampm = "am";
+            
+            if(hour > 12) {
+                hour -= 12;
+                ampm = "pm";
+            }
+            
+            if(hour == 0) { // hour가 0이면 자정
+                hour = 12;
+                ampm = "am";
+            }
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+            const currTime = hour + ":" + min + ":" +sec + " " + ampm;
+            document.getElementById('clock').innerHTML = currTime;
+        }
+        showtime(); // 브라우저 웹페이지가 로딩되었을 때 바로 호출
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Beer House</title>
+    <meta charset="utf-8">
+    <style>
+        html {
+            /* 화면에 꽉차게 bg.jpg 이미지 넣기*/
+            background-image: url('images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            /* div 요소안에 있는 text들을 중앙정렬 시키기 */
+            text-align: center;
+        }
+
+        h1 {
+            /*화면 맨위 상단에 h1문구 색상과 글씨크기 위치 조정*/
+            margin: 10px;
+            color: #80E12A;
+            position: relative;
+            top: 20px;
+            font-size: 45px;
+            font-weight: bold;
+
+        }
+
+        .content {
+            /* 화면에서 보이는 반투명 검정 바탕(색상과 투명도 조정) 위치와 크기 조정 */
+            position: relative;
+            top: -10px;
+            width: 790px;
+            height: 850px;
+            text-align: center;
+            color: black;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: auto;
+        }
+
+        .beer {
+            /* beer부분에 flex를 적용해주고 flex-wrap를 사용해서 줄바꿈을 통해 카드를 2x2로 배치함*/
+            /* 메인축 방향 정렬을 이용해서 아이템 둘레에 균일한 간격을 만듬 */
+            /* 수직축 방향 정렬을 이용해서 아이템들을 가운데로 정렬 */
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .beer img {
+            /* beer안에 이미지 가로로 꽉 채우기 */
+            width: 100%;
+        }
+
+        .card {
+            /* 카드 배경색에 흰색 적용해주고 가로세로 크기와 마진 조정 */
+            background-color: white;
+            width: 220px;
+            height: 320px;
+            margin: 30px;
+        }
+        
+        h3 {
+            /* h3문구 글꼴과 글씨 굵기 설정 */
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .text {
+            /* 카드안에 text 내용의 글씨 크기와 굵기조정, 안쪽여백 패딩 조정 */
+            padding: 0 20px 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .text>a {
+            /* 링크버튼 a 속성 꾸미기(색상 및 가로크기 패딩 조정) */
+            display: block;
+            background-color: #006400;
+            border: 0;
+            color: white;
+            padding: 10px;
+            width: 90%;
+        }
+
+        .text>a:hover {
+            /* 링크버튼에 커서를 가져다 댔을 때, 색상 변경 설정으로 표현해주기*/
+            background-color: #FF1493;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Welcome to Beer House</h1>
+        <div class="beer">
+            <div class="column">
+                <div class="card">
+                    <img src="images/pale1.jpg" />
+                    <div class="text">
+                        <h3>Pale Ale</h3>
+                        <p>Pale ale is a golden to<br> amber coloured beer style brewed with pale malt.</p>
+                        <a href="#" style="text-decoration: none;">View Detail</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/bitter.jpg" />
+                    <div class="text">
+                        <h3>Bitter Ale</h3>
+                        <p>Pale ale is a golden to<br> amber coloured beer style brewed with pale malt.</p>
+                        <a href="#" style="text-decoration: none;">View Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="images/stout.jpg" />
+                    <div class="text">
+                        <h3>Stout Ale</h3>
+                        <p>Pale ale is a golden to<br> amber coloured beer style brewed with pale malt.</p>
+                        <a href="#" style="text-decoration: none;">View Detail</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/lager.jpg" />
+                    <div class="text">
+                        <h3>Lager</h3>
+                        <p>Pale ale is a golden to<br> amber coloured beer style brewed with pale malt.</p>
+                        <a href="#" style="text-decoration: none;">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

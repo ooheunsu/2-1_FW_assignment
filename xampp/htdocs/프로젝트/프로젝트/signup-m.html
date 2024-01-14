@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>회원가입</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/ohchoi2.png">
+    <style>
+        @font-face {
+            font-family: 'PyeongChangPeace-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NeoDunggeunmoPro-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background-image: url(https://i.imgur.com/oIjVl83.png);
+        }
+
+        h1,
+        p {
+            font-family: 'PyeongChangPeace-Bold';
+        }
+
+        h1 {
+          font-size:38px;
+        }
+        p {
+          font-size:20px;
+        }
+
+        input[type=text],
+        input[type=password],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin: 10px;
+
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        #chkbtn {
+            background-color: midnightblue;
+            color: white;
+            font-family: 'NeoDunggeunmoPro-Regular';
+            float: left;
+            padding: 3px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 0px;
+            margin-left: 7px;
+        }
+
+        #chkbtn:hover {
+            background-color: lightgoldenrodyellow;
+            color: midnightblue;
+        }
+
+        input[type=submit] {
+            background-color: midnightblue;
+            font-family: 'PyeongChangPeace-Bold';
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: lightgoldenrodyellow;
+            color: midnightblue;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: rgba(8,2,2,0.19);
+            padding: 20px;
+            
+        }
+
+        .col-25 {
+            float: left;
+            width: 23%;
+            margin-top: 6px;
+            color: white;
+            font-family: 'NeoDunggeunmoPro-Regular';
+            font-size: 26px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1>ʚɞ 회원가입 ʚɞ</h1>
+    <p>✧༄*ੈ✩ 마계 통신 판매북 회원이 되어주셔서 감사합니다. ✧༄*ੈ✩</p>
+    <hr>
+    <div class="container">
+        <form action="signup-m.php" method="post">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">이메일</label>
+                    
+                </div>
+                <div class="col-75">
+                    <input type="text" name="email" placeholder="User email.." id="email">
+                    <button type="button" id="chkbtn" onclick="checkEmail()">중복확인</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">이름</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="uname" placeholder="User name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">비밀번호</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" name="pwd" placeholder="Password..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">전화번호</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="telno" placeholder="Mobile..">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function checkEmail() {
+            const email = document.getElementById('email');
+            const uid = email.value;
+            if (email.value.length == 0) {
+                alert("이메일을 입력하여야 합니다.");
+            } else {
+                const xhs = new XMLHttpRequest();
+                xhs.onreadystatechange = function() {
+                    if (xhs.readyState === xhs.DONE) {
+                        if (xhs.status === 200) {
+                            //alert(xhs.responseText);
+                            const result = JSON.parse(xhs.responseText);
+                            //alert(result.succ);
+                            if (result.succ === true) alert('이미 등록된 이메일입니다.');
+                            else alert('사용가능한 이메일입니다.');
+                        }
+                    }
+                }
+                xhs.open('GET', 'checkemail.php?uid=' + uid);
+                xhs.send();
+            }
+        }
+    </script>
+</body>
+
+</html>

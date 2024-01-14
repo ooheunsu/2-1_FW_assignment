@@ -1,0 +1,305 @@
+/* page-number class 지우기
+    warning 지우기*/
+
+/* 제목 폰트 */
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 설명 및 장바구니 폰트 */
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 제품 이름 */
+.sj-book .name{
+    font-family: 'SDSamliphopangche_Outline';
+	font-size: 38px;
+	font-weight: lighter;
+	margin: 10px 0 0 0;
+	color: deeppink;
+    text-align: right;
+}
+/*********************************************************/
+
+/* 책 내용이 테두리를 침범하지 않게 */
+.sj-book .book-content{
+	margin:15% 10%;
+}
+
+/*콘텐츠 내용*/
+.sj-book .book-content p{
+    font-family: 'KyoboHand';
+    font-size: 21px;
+	margin: 10px 0;
+    text-align: right;
+}
+
+/*할인 전 가격 흐림처리*/
+.discounted-price{
+    color: gray;
+    text-decoration: line-through;
+}
+
+/* 가격 */
+h3 {
+    text-align: right;
+    margin: 10px 0 0 0;
+}
+
+/*가격, 장바구니버튼 한줄로*/
+.priceline {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*책 표지, 뒷표지, 안내문, 사용법*/
+.sj-book .p1,
+.sj-book .p2,
+.sj-book .p3, 
+.sj-book .p111{
+	background-color:white;
+	background-image:url(../pics/caric_COver.png) !important;
+}
+
+/* 책 커버 표지 */
+.sj-book .hard{
+	width:480px;
+	height:600px;
+	background-color:white;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	-ms-box-shadow:none;
+	box-shadow:none;
+}
+
+/* 제품 목록들(table-contents) 보여주는 */
+.sj-book .table-contents{
+    font-family: 'SDSamliphopangche_Outline';
+	font-size:1.1em;
+	width:300px;
+	margin:5em auto;
+    color: deeppink;
+}
+
+/* 제품 목록 간격 */
+.sj-book .table-contents li{
+	line-height:3.0em;
+}
+
+/* 제품 목록들 href 설정 */
+.sj-book .table-contents a{
+	float:left;
+	width:100%;
+	clear:both;
+	text-decoration:none;
+	color:#333;
+	margin:2px 0;
+	padding:0 10px;
+    font-size: 28px;
+}
+
+/* 제품 목록에 커서 올렸을 때 색 변화 등 */
+.sj-book .table-contents a:hover{
+	background: pink;
+	float:left;
+	width:100%;
+	clear:both;
+	text-decoration:none;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-o-border-radius:10px;
+	-ms-border-radius:10px;
+	border-radius:10px;
+}
+
+/* 제품 이미지, 이미지의 테두리 설정 */
+img {
+    position: absolute;
+    border-radius: 10px;
+    border: 10px solid pink;
+    border-image: url("https://i.imgur.com/oBLwIno.jpg") 10;
+
+}
+
+/*장바구니 버튼 위치*/
+#cart-form  {
+	margin-top: 2%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/*장바구니 담는 버튼 */
+.button {
+    font-family: 'KyoboHand';
+    color: beige;
+    background-color: rgb(117, 114, 115);
+    text-align: right;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: 0;
+	opacity: 1;
+
+}
+
+.button:hover {
+    background-color: rgb(7, 7, 7);
+}
+
+/************************************************************/
+
+/* 책의 에니메이션 효과, 그라데이션, 깊이감 등등 *************/
+
+body, ul, table, form{
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+
+.animated{
+	-webkit-transition:margin-left 0.2s ease-in-out;
+	-moz-transition:margin-left 0.2s ease-in-out;
+	-o-transition:margin-left 0.2s ease-in-out;
+	-ms-transition:margin-left 0.2s ease-in-out;
+	transition:margin-left 0.2s ease-in-out;
+}
+
+.animated{
+	-webkit-transition:margin-left 0.2s ease-in-out;
+	-moz-transition:margin-left 0.2s ease-in-out;
+	-o-transition:margin-left 0.2s ease-in-out;
+	-ms-transition:margin-left 0.2s ease-in-out;
+	transition:margin-left 0.2s ease-in-out;
+}
+
+.sj-book .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 10px #999;
+	-moz-box-shadow:0 0 10px #999;
+	-ms-box-shadow:0 0 10px #999;
+	-o-box-shadow:0 0 10px #999;
+	box-shadow:0 0 10px #999;
+}
+
+.sj-book .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.sj-book .p1 .side{
+	width:5px;
+	height:600px;
+	position:absolute;
+	top:0;
+	left:475px;
+
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #bbb), color-stop(0.5,  #ddd), color-stop(1,  #bbb));
+	background-image:-webkit-linear-gradient(left, #bbb, #ddd, #bbb);
+	background-image:-moz-linear-gradient(left, #bbb, #ddd, #bbb);
+	background-image:-ms-linear-gradient(left, #bbb, #ddd, #bbb);
+	background-image:-o-linear-gradient(left, #bbb, #ddd, #bbb);
+	background-image:linear-gradient(left, #bbb, #ddd, #bbb);
+	
+	-webkit-transform:rotateY(-90deg);
+	-moz-transform:rotateY(-90deg);
+	-o-transform:rotateY(-90deg);
+	-ms-transform:rotateY(-90deg);
+	transform:rotateY(-90deg);
+
+	-webkit-transform-origin:top right;
+	-moz-transform-origin:top right;
+	-o-transform-origin:top right;
+	-ms-transform-origin:top right;
+	transform-origin:top right;
+	z-index:100000;
+
+}
+
+.sj-book .page-wrapper{
+	-webkit-perspective:2000px;
+	-moz-perspective: 2000px;
+	-ms-perspective: 2000px;
+	perspective: 2000px;
+}
+
+.sj-book .own-size{
+	width:460px;
+	height:582px;
+	background-color:white;
+	overflow:hidden;
+}
+
+/* 페이지 로드할 때 표시 */
+.sj-book .loader{
+	background-image:url(../pics/loader.gif);
+	width:22px;
+	height:22px;
+	position:absolute;
+	top:280px;
+	left:219px;
+}
+#canvas{
+	width: 960px;
+	height: 600px;
+	margin: 100px auto;
+}
+
+#book-zoom{
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-ms-transition: -ms-transform 1s;
+	-o-transition: -o-transform 1s;
+	transition: transform 1s;
+}
+
+/* 책의 속지에 하트 테두리 넣기 및 그라데이션 */
+
+.sj-book .even{
+  background-image: url("../pics/real1.png"),-webkit-linear-gradient(left, transparent 95%, #dadada 100%); 
+}
+
+.sj-book .odd{
+	background-image: url("../pics/real2.png"),-webkit-linear-gradient(right, #fff 95%, #cacaca 100%);
+}
+
+.sj-book-transform div[page="1"] > div, .sj-book-transform div[page="2"] > div{
+	overflow:visible !important;
+}
+
+/* 책의 깊이감을 보여줌 */
+.sj-book .depth{
+	background-image:url(../pics/pages-depth.png);
+	position:absolute;
+	top:7px;
+	width:16px;
+	height:590px;
+}
+
+.sj-book .front-side .depth{
+	left:4px;
+	background-position:0 0;
+}
+
+.sj-book .back-side .depth{
+	right:4px;
+	background-position:right 0;
+}
+
+/* 책 크기 */
+.sj-book{
+	width:960px;
+	height:600px;
+}

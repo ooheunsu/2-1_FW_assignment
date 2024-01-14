@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <meta charset="uft-8">
+</head>
+
+<body>
+    <h1>JavaScript Syntax</h1>
+    <p id="output"></p>
+    <script>
+        let person = "Sam";
+        let weight = 74.3;
+        let height = 182.1;
+
+        let bmi = weight / ((height / 100) ** 2);
+        //const output = document.getElementById('output'); //id 검색법
+        const output = document.querySelector('#output'); //css 선택자 (css에서 쓰듯이 id는#, class는. 붙여주기)
+        output.style.color = "blue";
+        output.style.fontSize = "20px"; //CSS를 JS에서 써먹으면서 동적인 효과를 주는거임
+        output.innerHTML = person + "의 BMI는 " + bmi.toFixed(2) + "입니다."; /*아니 이게지금 print라고요?*/
+        //        bmi.toFixed(2) = 투픽스드를 이용한 소수점 두자리까지만 보여줘라~
+
+        // Array
+        const perArr = ["Sam", "Bob", "Andy"];
+        const weightArr = [74.6, 88.9, 68.2];
+        const heightArr = [181.5, 174.9, 170.3];
+        const bmiArr = []; // 빈 배열
+
+        // 세 사람의 bmi를 계산해서 빈 배열에 넣어주기
+        for (let i = 0; i < perArr.length; i++) {
+            bmi = weightArr[i] / ((heightArr[i] / 100) ** 2);
+            bmiArr[i] = bmi.toFixed(2);
+        }
+        let text = ""; // 비어있는 문자열 하나 선언
+        for (let i in perArr) {
+            text += perArr[i] + " : " + bmiArr[i] + "<br>";
+
+        }
+        output.innerHTML = text;
+
+        // Object
+        const perObj = [{
+                name: "Sam",
+                weight: "74.5",
+                height: "181.2"
+            },
+            {
+                name: "Bob",
+                weight: "88.9",
+                height: "174.9"
+            },
+            {
+                name: "Andy",
+                weight: "68.2",
+                height: "170.3"
+            }
+        ];
+
+        text = "";
+        for (let e of perObj) {
+            bmi = e['weight'] / ((e['height'] / 100) ** 2);
+            text += e['name'] + " : " + bmi.toFixed(2) + "<br>";
+        }
+
+        output.innerHTML = text;
+
+    </script>
+</body>
+
+</html>
